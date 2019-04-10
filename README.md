@@ -6,7 +6,7 @@ Las instrucciones para hacer uso del mismo son las siguientes:
 
 1. Instalar docker
 
-		Siga las instrucciones de: https://docs.docker.com/install/
+	Siga las instrucciones de: https://docs.docker.com/install/
 
 2. Clonar este repositorio mediante:
 
