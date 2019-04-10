@@ -17,10 +17,10 @@ git clone https://github.com/jpluke/sdn_container.git
 3. Crear la imagen docker
 
 ```
-	docker build . -t sdn/2019.1
+docker build . -t sdn/2019.1
 ```
 
 4. Ejecutar el contenedor
 ```
-	sh my_run.sh
+sh my_run.sh
 ```
