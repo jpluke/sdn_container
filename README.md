@@ -5,7 +5,7 @@ Este repositorio está destinado a alojar los ficheros para crear las imágenes 
 1. Instalar docker
 Siga las instrucciones de:
 
-(https://docs.docker.com/install/)[https://docs.docker.com/install/]
+[https://docs.docker.com/install/]
 
 2. Clonar este repositorio
 
