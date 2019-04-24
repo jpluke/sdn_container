@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export GDISPLAY=unix/$DISPLAY      # forward X11 display to the host machine
+export GDISPLAY=$DISPLAY      # forward X11 display to the host machine
 export GUSERNAME=`id -u -n`        # current user's username
 export GUID=`id -u`                # current user's user id
 export GGROUP=`id -g -n`           # current user's primary group name
@@ -15,6 +15,7 @@ if [ "$name" != "$(docker ps -a -f "name=$name" --format '{{.Names}}')" ]; then
     echo "Container does not exist..."
     docker run  --privileged=true -h sdn  --name $name         \
                     -v /tmp/.X11-unix:/tmp/.X11-unix  \
+                    -v $XAUTHORITY:/$XAUTHORITY  \
                     -v /lib/modules:/lib/modules      \
                     -v $HOME:$GHOME          \
                     -e DISPLAY=$GDISPLAY              \
@@ -24,6 +25,7 @@ if [ "$name" != "$(docker ps -a -f "name=$name" --format '{{.Names}}')" ]; then
                     -e GGID=$GGID                     \
                     -e GHOME=$HOME                    \
                     -e GSHELL=$SHELL                  \
+                    -e XAUTHORITY=$XAUTHORITY         \
                     -it sdn/2019.1  
 fi
 
